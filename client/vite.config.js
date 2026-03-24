@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    port: 5173,
+    port: "https://react-auth-kohl.vercel.app",
     proxy: {
       "/api": {
         target: "https://react-node-auth-backend-17y6.onrender.com",
