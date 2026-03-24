@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://react-node-auth-backend-17y6.onrender.com",
 });
 
 API.interceptors.request.use((req) => {
