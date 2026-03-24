@@ -8,16 +8,30 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const { data } = await loginUser(form);
+
+      console.log("LOGIN SUCCESS:", data);
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.user.username);
 
       navigate("/home");
     } catch (error) {
+      console.log("LOGIN ERROR:", error);
+
+      if (error.response) {
+        console.log("Server Response:", error.response.data);
+        console.log("Status Code:", error.response.status);
+        console.log("Headers:", error.response.headers);
+      } else if (error.request) {
+        console.log("No response from server:", error.request);
+      } else {
+        console.log("Request setup error:", error.message);
+      }
+
       alert(error.response?.data?.message || "Login failed");
-      console.log(error);
     }
   };
 

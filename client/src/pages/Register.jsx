@@ -14,13 +14,27 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      await registerUser(form);
+      const res = await registerUser(form);
+
+      console.log("REGISTER SUCCESS:", res.data);
+
       alert("Registered successfully");
       navigate("/login");
     } catch (error) {
+      console.log("REGISTER ERROR:", error);
+
+      if (error.response) {
+        console.log("Server Response:", error.response.data);
+        console.log("Status Code:", error.response.status);
+      } else if (error.request) {
+        console.log("No response from server:", error.request);
+      } else {
+        console.log("Request error:", error.message);
+      }
+
       alert(error.response?.data?.message || "Registration failed");
-      console.log(error);
     } finally {
       setLoading(false);
     }
