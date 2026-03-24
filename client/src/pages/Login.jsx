@@ -17,6 +17,7 @@ export const Login = () => {
       navigate("/home");
     } catch (error) {
       alert(error.response?.data?.message || "Login failed");
+      console.log(error);
     }
   };
 
