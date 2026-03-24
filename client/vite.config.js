@@ -9,7 +9,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: "https://react-node-auth-backend-17y6.onrender.com",
+        target: "https:localhost//5000",
         changeOrigin: true,
       },
     },
