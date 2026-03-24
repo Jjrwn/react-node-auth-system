@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http//localhost:5173", "https://react-auth-kohl.vercel.app/"],
+    origin: "https://react-auth-kohl.vercel.app",
     credentials: true,
   }),
 );
