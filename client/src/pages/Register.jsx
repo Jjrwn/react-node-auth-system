@@ -20,6 +20,8 @@ export const Register = () => {
       navigate("/login");
     } catch (error) {
       alert(error.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
     }
   };
 
