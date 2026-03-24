@@ -10,9 +10,11 @@ connectDB();
 
 const app = express();
 
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
+
 app.use(
   cors({
-    origin: "https://react-auth-kohl.vercel.app",
+    origin: CLIENT_ORIGIN,
     credentials: true,
   }),
 );
