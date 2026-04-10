@@ -2,6 +2,9 @@
 
 A simple full-stack authentication system built with React, Node.js, and Express. This project demonstrates secure user registration and login using modern backend practices.
 
+## Live Demo
+https://react-auth-kohl.vercel.app/login
+
 ## Features
 - User Registration
 - User Login Authentication
